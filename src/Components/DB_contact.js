@@ -23,7 +23,7 @@ const navigate= useNavigate()
 
   ///////////////////////////////////////////
   const fetchData = () => {
-    fetch(`http://127.0.0.1:5000/Forms-get-contact`)
+    fetch(`https://klar-back.onrender.com/Forms-get-contact`)
     .then((response) => response.json())
     .then((actualData) => {
       setRows(actualData);
@@ -46,11 +46,11 @@ return (
     <div >
          <Navbar bg="primary" variant="dark">
     <Container className="me-auto justify-content-center">
-      <Navbar.Brand href="http://localhost:3000/Home">Home</Navbar.Brand>
+      <Navbar.Brand href="https://klar.netlify.app/Home">Home</Navbar.Brand>
       <Nav className="me-auto">
-        <Nav.Link href="http://localhost:3000/DB_student">Students data</Nav.Link>
-        <Nav.Link href="http://localhost:3000/DB_teacher">Teachers data base</Nav.Link>
-        <Nav.Link href="http://localhost:3000/DB_contact">Contact data base</Nav.Link>
+        <Nav.Link href="https://klar.netlify.app/DB_student">Students data</Nav.Link>
+        <Nav.Link href="https://klar.netlify.app/DB_teacher">Teachers data base</Nav.Link>
+        <Nav.Link href="https://klar.netlify.app/DB_contact">Contact data base</Nav.Link>
 
       </Nav>
     </Container>

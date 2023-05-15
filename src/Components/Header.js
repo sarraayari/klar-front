@@ -9,17 +9,16 @@ function Header() {
       
       <br />
       <Navbar bg="primary" variant="dark">
-        <Container>
-          <Navbar.Brand href="http://localhost:3000/Home"><Button>Home</Button></Navbar.Brand>
-          <Nav className="me-auto">
-            <Nav.Link href="http://localhost:3000/Student">Students</Nav.Link>
-            <Nav.Link href="http://localhost:3000/Teacher">Teachers</Nav.Link>
-            <Nav.Link href="http://localhost:3000/Home">About</Nav.Link>
-            <Nav.Link href="http://localhost:3000/Home">Contact</Nav.Link>
-          </Nav>
-        </Container>
-      </Navbar>
+    <Container className="me-auto justify-content-center">
+      <Navbar.Brand href="https://klar.netlify.app/Home">Home</Navbar.Brand>
+      <Nav className="me-auto">
+        <Nav.Link href="https://klar.netlify.app/DB_student">Students data</Nav.Link>
+        <Nav.Link href="https://klar.netlify.app/DB_teacher">Teachers data base</Nav.Link>
+        <Nav.Link href="https://klar.netlify.app/DB_contact">Contact data base</Nav.Link>
 
+      </Nav>
+    </Container>
+  </Navbar>
       <br />
 
      

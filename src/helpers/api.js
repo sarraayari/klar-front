@@ -1,5 +1,5 @@
 import axios from 'axios';
 const api = axios.create({
-    baseURL : 'https://klar-back.onrender.com'
+    baseURL : 'https://klar-back.onrender.com/'
 });
 export default api;
