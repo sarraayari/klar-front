@@ -1,0 +1,4 @@
+[[redirects]] 
+from = "https://klar.netlify.app"
+to = "/Home"
+status = 200
