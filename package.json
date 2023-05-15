@@ -1,5 +1,5 @@
 {
-  "name": "isca2022",
+  "name": "klar",
   "version": "0.1.0",
   "private": true,
   "homepage": "http://klar.netlify.app",
@@ -16,8 +16,6 @@
     "bootstrap": "^5.2.3",
     "font-awesome": "^4.7.0",
     "@fortawesome/react-fontawesome": "^9.2.0",
-    "formik": "^2.2.9",
-    "fs": "^0.0.1-security",
     "primeicons": "^6.0.1",
     "primereact": "^8.6.1",
     "react": "^18.2.0",
