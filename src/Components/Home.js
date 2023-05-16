@@ -1,8 +1,9 @@
 import React from 'react';
 import { useState } from 'react';
 import api from '../helpers/api';
-import { Container, Row, Col, Form, Button } from 'react-bootstrap';
-import './AlertMessage'
+import { Container, Row, Col, Form} from 'react-bootstrap';
+import './AlertMessage';
+import Button from 'react-bootstrap/Button';
 import { useNavigate } from 'react-router-dom';
 import Header from './Header';
 function Home  ()  {
@@ -20,7 +21,7 @@ function Home  ()  {
         email: email
       })
       .then (res => {
-        navigate('/AlertMessage')
+        navigate('/AlertMessage');
        
       })
     }
