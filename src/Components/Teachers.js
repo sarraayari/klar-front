@@ -213,14 +213,14 @@ const handleSelect_availability = (event) => {
             aria-label="radio 1"
             id={`Student`}
             label={`Student`}
-            onSelect={handleSelect_Status}
+            onChange={handleSelect_Status}
           />
           <Form.Check
             type="radio"
             aria-label="radio 1"
             id={`Empolyed`}
             label={`Empolyed`}
-            onSelect={handleSelect_Status}
+            onChange={handleSelect_Status}
           />
           </div>
            ) ) }
@@ -252,25 +252,25 @@ const handleSelect_availability = (event) => {
             type="checkbox"
             id={`Python`}
             label={`Python`}
-            onSelect={handleSelect}
+            onChange={handleSelect}
           />
           <Form.Check
             type="checkbox"
             id={`C/C++`}
             label={`C/C++`}
-            onSelect={handleSelect}
+            onChange={handleSelect}
           />
           <Form.Check
             type="checkbox"
             id={`Java`}
             label={`Java`}
-            onSelect={handleSelect}
+            onChange={handleSelect}
           />
           <Form.Check
             type="checkbox"
             id={`Algorithm`}
             label={`Algorithm`}
-            onSelect={handleSelect}
+            onChange={handleSelect}
           />
 
           </div>
@@ -287,25 +287,25 @@ const handleSelect_availability = (event) => {
             type="checkbox"
             id={`on the weekends`}
             label={`on the weekends`}
-            onSelect={handleSelect_availability}
+            onChange={handleSelect_availability}
           />
           <Form.Check
             type="checkbox"
             id={`all sundays`}
             label={`all sundays`}
-            onSelect={handleSelect_availability}
+            onChange={handleSelect_availability}
           />
           <Form.Check
             type="checkbox"
             id={`Saturday`}
             label={`Saturday`}
-            onSelect={handleSelect_availability}
+            onChange={handleSelect_availability}
           />
           <Form.Check
             type="checkbox"
             id={`Wednesday afternoon`}
             label={`Wednesday afternoon`}
-            onSelect={handleSelect_availability}
+            onChange={handleSelect_availability}
           />
           </div>
           </Form.Group>
@@ -342,6 +342,13 @@ const handleSelect_availability = (event) => {
           feedbackType="invalid"
         />
       </Form.Group>
+
+
+
+      {/* /////////////////////////////////////////////////////////// */}
+
+
+      
       <Button type="submit">Submit form</Button>
 
   {/* /////////////////////////////////////////////////////////// */}
