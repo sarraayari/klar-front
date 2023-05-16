@@ -240,25 +240,25 @@ const handleSelect_availability = (event) => {
             type="checkbox"
             id={`Python`}
             label={`Python`}
-            onChange={handleSelect}
+            onSelect={handleSelect}
           />
           <Form.Check
             type="checkbox"
             id={`C/C++`}
             label={`C/C++`}
-            onChange={handleSelect}
+            onSelect={handleSelect}
           />
           <Form.Check
             type="checkbox"
             id={`Java`}
             label={`Java`}
-            onChange={handleSelect}
+            onSelect={handleSelect}
           />
           <Form.Check
             type="checkbox"
             id={`Algorithm`}
             label={`Algorithm`}
-            onChange={handleSelect}
+            onSelect={handleSelect}
           />
 
           </div>
@@ -275,25 +275,25 @@ const handleSelect_availability = (event) => {
             type="checkbox"
             id={`on the weekends`}
             label={`on the weekends`}
-            onChange={handleSelect_availability}
+            onSelect={handleSelect_availability}
           />
           <Form.Check
             type="checkbox"
             id={`all sundays`}
             label={`all sundays`}
-            onChange={handleSelect_availability}
+            onSelect={handleSelect_availability}
           />
           <Form.Check
             type="checkbox"
             id={`Saturday`}
             label={`Saturday`}
-            onChange={handleSelect_availability}
+            onSelect={handleSelect_availability}
           />
           <Form.Check
             type="checkbox"
             id={`Wednesday afternoon`}
             label={`Wednesday afternoon`}
-            onChange={handleSelect_availability}
+            onSelect={handleSelect_availability}
           />
           </div>
           </Form.Group>
