@@ -36,6 +36,7 @@ function Teachers() {
     const isChecked = event.target.checked;
 
     if (isChecked) {
+      
       setSelectedCourses((prevSelectedCourses) => [
         ...prevSelectedCourses,
         courseId,
@@ -45,6 +46,7 @@ function Teachers() {
         prevSelectedCourses.filter((course) => course !== courseId)
       );
     }
+    console.log(courses_to_teach)
     setCourses_to_teach(selectedCourses);
   };
 
@@ -65,7 +67,15 @@ const handleSelect_availability = (event) => {
       prevSelect_availability.filter((availability) => availability !== avId)
     );
   }
+  console.log(select_availability)
   setAvailability(select_availability);
+  console.log(full_name)
+  console.log(email)
+  console.log(phone_number)
+  console.log(state)
+  console.log(city)
+  console.log(hourly_budget)
+  
 };
    
 
@@ -90,6 +100,7 @@ const handleSelect_availability = (event) => {
         console.log('You selected Employed');
        
       }
+      console.log(student_or_employed)
     }
     
 
@@ -100,7 +111,6 @@ const handleSelect_availability = (event) => {
     const form = event.currentTarget;
     if (form.checkValidity() === false) {
       event.preventDefault();
-      event.stopPropagation();
       console.log(full_name);
       api.post('/Forms-post-teacher',{
         full_name:full_name,
@@ -116,7 +126,7 @@ const handleSelect_availability = (event) => {
       })
       .then (res => {
         navigate('/AlertMessage')
-        console.log(full_name)
+        console.log(form)
       })
     }}
 
@@ -139,7 +149,7 @@ const handleSelect_availability = (event) => {
             type="text"
             placeholder="full name"
           />
-          <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+          
         </Form.Group>
   {/* /////////////////////////////////////////////////////////// */}
 
@@ -151,7 +161,7 @@ const handleSelect_availability = (event) => {
             type="email"
             placeholder="email" 
           />
-          <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+         
         </Form.Group>
   {/* /////////////////////////////////////////////////////////// */}
 
@@ -160,16 +170,14 @@ const handleSelect_availability = (event) => {
         <Form.Group as={Col} md="4" controlId="validationCustomUsername">
           <Form.Label>Phone number</Form.Label>
           <InputGroup hasValidation>
-            <InputGroup.Text id="inputGroupPrepend">DT</InputGroup.Text>
+            <InputGroup.Text id="inputGroupPrepend">+216</InputGroup.Text>
             <Form.Control onChange={(e) => setPhone_number(e.target.value)}
               type="number"
               placeholder="phone number"
               aria-describedby="inputGroupPrepend"
               required
             />
-            <Form.Control.Feedback type="invalid">
-              Please choose a phone number.
-            </Form.Control.Feedback>
+            
           </InputGroup>
         </Form.Group>
 
@@ -184,17 +192,13 @@ const handleSelect_availability = (event) => {
         <Form.Group as={Col} md="6" controlId="validationCustom03">
           <Form.Label>City</Form.Label>
           <Form.Control onChange={(e) => setCity(e.target.value)} type="text" placeholder="City" required />
-          <Form.Control.Feedback type="invalid">
-            Please provide a valid city.
-          </Form.Control.Feedback>
+         
         </Form.Group>
           {/* /////////////////////////////////////////////////////////// */}
         <Form.Group as={Col} md="3" controlId="validationCustom04">
           <Form.Label>State</Form.Label>
           <Form.Control onChange={(e) => setState(e.target.value)} type="text" placeholder="State" required />
-          <Form.Control.Feedback type="invalid">
-            Please provide a valid state.
-          </Form.Control.Feedback>
+         
         </Form.Group>
   {/* /////////////////////////////////////////////////////////// */}
 
@@ -314,16 +318,13 @@ const handleSelect_availability = (event) => {
           <Form.Group>
           <Form.Label>Hourly budget</Form.Label>
           <InputGroup hasValidation>
-            <InputGroup.Text onChange={(e) => setHourly_budget(e.target.value)} id="inputGroupPrepend">-</InputGroup.Text>
+            <InputGroup.Text onChange={(e) => setHourly_budget(e.target.value)} id="inputGroupPrepend">DT</InputGroup.Text>
             <Form.Control
               type="number"
               placeholder="hourly budget"
               aria-describedby="inputGroupPrepend"
               required
             />
-             <Form.Control.Feedback type="invalid">
-              Please choose an hourly budget.
-            </Form.Control.Feedback>
           </InputGroup>
 </Form.Group>
   {/* /////////////////////////////////////////////////////////// */}
