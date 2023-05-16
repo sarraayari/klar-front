@@ -170,9 +170,7 @@ function Students() {
               aria-describedby="inputGroupPrepend"
               required
             />
-            <Form.Control.Feedback type="invalid">
-              Please choose a phone number.
-            </Form.Control.Feedback>
+            
           </InputGroup>
         </Form.Group>
       </Row>
@@ -182,9 +180,7 @@ function Students() {
         <Form.Group as={Col} md="6" controlId="validationCustom03">
           <Form.Label>City</Form.Label>
           <Form.Control onChange={(e) => setCity(e.target.value)} type="text" placeholder="City" required />
-          <Form.Control.Feedback type="invalid">
-            Please provide a valid city.
-          </Form.Control.Feedback>
+          
         </Form.Group>
 
 
@@ -192,9 +188,7 @@ function Students() {
         <Form.Group as={Col} md="3" controlId="validationCustom04">
           <Form.Label>State</Form.Label>
           <Form.Control onChange={(e) => setState(e.target.value)} type="text" placeholder="State" required />
-          <Form.Control.Feedback type="invalid">
-            Please provide a valid state.
-          </Form.Control.Feedback>
+          
         </Form.Group>
 
     <Form.Group >
@@ -205,13 +199,13 @@ function Students() {
             type="radio"
             id={`Student`}
             label={`Student`}
-            onSelect={(e) => setStudent_or_employed(e.target.value)}
+            onChange={(e) => setStudent_or_employed(e.target.value)}
           />
           <Form.Check
             type="radio"
             id={`Empolyed`}
             label={`Empolyed`}
-            onSelect={(e) => setStudent_or_employed(e.target.value)}
+            onChange={(e) => setStudent_or_employed(e.target.value)}
           />
           </div>
         
