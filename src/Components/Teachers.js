@@ -34,39 +34,39 @@ function Teachers() {
 
   const [selectedFields, setSelectedFields] = useState([]);
   //////////////////////////////////////////////////////
-  // const handleSelect = (event) => {
-  //   const courseId = event.target.id;
-  //   const isChecked = event.target.checked;
+  const handleSelect = (event) => {
+    const courseId = event.target.id;
+    const isChecked = event.target.checked;
 
-  //   if (isChecked) {
+    if (isChecked) {
       
-  //     setSelectedCourses((prevSelectedCourses) => [
-  //       ...prevSelectedCourses,
-  //       courseId,
-  //     ]);
-  //   } else {
-  //     setSelectedCourses((prevSelectedCourses) =>
-  //       prevSelectedCourses.filter((course) => course !== courseId)
-  //     );
-  //   }
-  //   console.log(courses_to_teach)
-  //   setCourses_to_teach(selectedCourses);
-  // };
+      setSelectedCourses((prevSelectedCourses) => [
+        ...prevSelectedCourses,
+        courseId,
+      ]);
+    } else {
+      setSelectedCourses((prevSelectedCourses) =>
+        prevSelectedCourses.filter((course) => course !== courseId)
+      );
+    }
+    console.log(courses_to_teach)
+    setCourses_to_teach(selectedCourses);
+  };
 
 
 
   ///////////////////////////////////////////////////
-  const handleSelect = (event) => {
-    const { value, checked } = event.target;
+  // const handleSelect = (event) => {
+  //   const { value, checked } = event.target;
 
-    if (checked) {
-      setSelectedFields((prevSelectedFields) => [...prevSelectedFields, value]);
-    } else {
-      setSelectedFields((prevSelectedFields) =>
-        prevSelectedFields.filter((field) => field !== value)
-      );
-    }
-  };
+  //   if (checked) {
+  //     setSelectedFields((prevSelectedFields) => [...prevSelectedFields, value]);
+  //   } else {
+  //     setSelectedFields((prevSelectedFields) =>
+  //       prevSelectedFields.filter((field) => field !== value)
+  //     );
+  //   }
+  // };
 
 //////////////////////////////////////////////////////
 
@@ -127,9 +127,7 @@ const handleSelect_availability = (event) => {
 
   const handleSubmit = (event) => {
     const form = event.currentTarget;
-    if (form.checkValidity() === false) {
-      event.preventDefault();
-      console.log(full_name);
+    
       api.post('/Forms-post-teacher',{
         full_name:full_name,
         city:city,
@@ -144,9 +142,9 @@ const handleSelect_availability = (event) => {
       })
       .then (res => {
         navigate('/AlertMessage');
-        console.log(selectedFields);
+        
       })
-    }}
+    }
 
  
 
@@ -224,7 +222,7 @@ const handleSelect_availability = (event) => {
 
     <Form.Group onSelect={handleSelect_Status}>
           <p>Currently a student or an employer</p>
-          {['radio'].map(() => (
+         
         <div key={`radio`} className="mb-3">
           <Form.Check
             type="radio"
@@ -241,7 +239,7 @@ const handleSelect_availability = (event) => {
             onChange={handleSelect_Status}
           />
           </div>
-           ) ) }
+          
 
            </Form.Group>
              {/* /////////////////////////////////////////////////////////// */}

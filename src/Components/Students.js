@@ -197,7 +197,7 @@ function Students() {
           </Form.Control.Feedback>
         </Form.Group>
 
-    <Form.Group >
+    <Form.Group onSelect={handleSelect_Status}>
           <p>Currently a student or an employer</p>
          
         <div key={`radio`} className="mb-3">
@@ -224,7 +224,7 @@ function Students() {
           <Form.Label>Field of study or work</Form.Label>
           <Form.Control type="text" onChange={(e) => setField_of_study_or_work(e.target.value)} placeholder="ex: computer science" required />
         
-        <Form.Group title="Select courses you want to study" >
+        <Form.Group title="Select courses you want to study" onSelect={handleSelect} >
           <p>Select the courses you want to study</p>
       
         <div key={`checkbox`} className="mb-3">
@@ -257,7 +257,7 @@ function Students() {
     
         </Form.Group>
   <p>Select your availability</p>
-  <div key={`checkbox`} className="mb-3" >
+  <div key={`checkbox`} className="mb-3" onSelect={handleSelect_availability} >
           <Form.Check
             type="checkbox"
             id={`on the weekends`}
@@ -285,16 +285,14 @@ function Students() {
           </div>
           <Form.Label>Hourly budget</Form.Label>
           <InputGroup hasValidation>
-            <InputGroup.Text onChange={(e) => setHourly_budget(e.target.value)} id="inputGroupPrepend">-</InputGroup.Text>
+            <InputGroup.Text onChange={(e) => setHourly_budget(e.target.value)} id="inputGroupPrepend">DT</InputGroup.Text>
             <Form.Control
               type="number"
               placeholder="hourly budget"
               aria-describedby="inputGroupPrepend"
               required
             />
-             <Form.Control.Feedback type="invalid">
-              Please choose an hourly budget.
-            </Form.Control.Feedback>
+             
           </InputGroup>
 
 
