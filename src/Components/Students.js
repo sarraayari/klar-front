@@ -29,7 +29,8 @@ function Students() {
 
 
   const [selectedCourses, setSelectedCourses] = useState([]);
-  const [select_availability, setSelect_availability ] = useState([]);
+  const [selectedCourses2, setSelectedCourses2] = useState([]);
+  
 
 ////////////////////////////////////////////////////////
 
@@ -53,21 +54,17 @@ const handleSelect = (event) => {
   ////////////////////////////////////////////////////////////
 
   const handleSelect_availability = (event) => {
-    const avId = event.target.id;
+    const selectedCourse2 = event.target.value;
     const isChecked = event.target.checked;
-    console.log(event.target.checked)
   
     if (isChecked) {
-      setSelect_availability((prevSelect_availability) => [
-        ...prevSelect_availability,
-        avId,
-      ]);
+      setSelectedCourses2((prevSelectedCourses2) => [...prevSelectedCourses2, selectedCourse2]);
     } else {
-      setSelect_availability((prevSelect_availability) =>
-        prevSelect_availability.filter((availability) => availability !== avId)
+      setSelectedCourses((prevSelectedCourses) =>
+        prevSelectedCourses2.filter((course) => course !== selectedCourse2)
       );
     }
-    setAvailability(select_availability);
+    console.log(selectedCourse2);
   };
 
   ///////////////////////////////////////////////////////////////
@@ -103,7 +100,7 @@ const handleSelect = (event) => {
         email: email,
         student_or_employed:student_or_employed,
         hourly_budget:hourly_budget,
-        availability:availability,
+        availability:selectedCourses2,
         courses_to_study:selectedCourses,
         field_of_study_or_work:field_of_study_or_work,
         phone_number:phone_number,
