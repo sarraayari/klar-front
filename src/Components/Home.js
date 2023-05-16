@@ -14,11 +14,6 @@ function Home  ()  {
 
   const handleSubmit = (event) => {
     const form = event.currentTarget;
-    if (form.checkValidity() === false) {
-      event.preventDefault();
-      event.stopPropagation();
-      console.log(full_name);
-      console.log(email);}
       api.post('/Forms-post-contact',{
         full_name:full_name,
         message:message,
@@ -26,7 +21,7 @@ function Home  ()  {
       })
       .then (res => {
         navigate('/AlertMessage')
-        console.log(full_name)
+        console.log(form)
       })
     }
 

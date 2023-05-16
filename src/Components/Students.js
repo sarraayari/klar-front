@@ -198,7 +198,7 @@ function Students() {
           </Form.Control.Feedback>
         </Form.Group>
 
-    <Form.Group onSelect={handleSelect_Status}>
+    <Form.Group >
           <p>Currently a student or an employer</p>
           {['radio'].map((type) => (
         <div key={`radio`} className="mb-3">
@@ -225,7 +225,7 @@ function Students() {
           <Form.Label>Field of study or work</Form.Label>
           <Form.Control type="text" onChange={(e) => setField_of_study_or_work(e.target.value)} placeholder="ex: computer science" required />
         
-        <Form.Group title="Select courses you want to study" onSelect={handleSelect}>
+        <Form.Group title="Select courses you want to study" >
           <p>Select the courses you want to study</p>
       {['checkbox'].map((type) => (
         <div key={`checkbox`} className="mb-3">
@@ -258,7 +258,7 @@ function Students() {
       ))}
         </Form.Group>
   <p>Select your availability</p>
-  <div key={`checkbox`} className="mb-3" onSelect={handleSelect_availability}>
+  <div key={`checkbox`} className="mb-3" >
           <Form.Check
             type="checkbox"
             id={`on the weekends`}
