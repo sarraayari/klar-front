@@ -5,7 +5,7 @@ import Header from './Header';
 function AlertMessage() {
   return (
     <>
-   
+      <Header/>
       {[
         'info'
       ].map((variant) => (

@@ -115,13 +115,12 @@ const handleSelect_availability = (event) => {
         state:state
       })
       .then (res => {
-        navigate('/AlertMessage');
+        navigate('/AlertMessage')
         console.log(full_name)
       })
     }}
 
-  //   setValidated(true);
-  // };
+ 
 
  //////////////////////////////////////////////////////
 
@@ -129,8 +128,10 @@ const handleSelect_availability = (event) => {
     <div >
       <Header/>
       <p>To apply as a teacher, fill out this form and we will contact you as soon as possible</p>
-    <Form noValidate validated={validated} onSubmit={handleSubmit}>
+    <Form onSubmit={handleSubmit}>
       <Row className="mb-3">
+
+        {/* /////////////////////////////////////////////////////////// */}
         <Form.Group as={Col} md="4" controlId="validationCustom01">
           <Form.Label>Full name</Form.Label>
           <Form.Control onChange={(e) => setFull_name(e.target.value)}
@@ -140,7 +141,7 @@ const handleSelect_availability = (event) => {
           />
           <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
         </Form.Group>
-
+  {/* /////////////////////////////////////////////////////////// */}
 
 
         <Form.Group as={Col} md="4" controlId="validationCustom02">
@@ -152,14 +153,14 @@ const handleSelect_availability = (event) => {
           />
           <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
         </Form.Group>
-
+  {/* /////////////////////////////////////////////////////////// */}
 
 
 
         <Form.Group as={Col} md="4" controlId="validationCustomUsername">
           <Form.Label>Phone number</Form.Label>
           <InputGroup hasValidation>
-            {/* <InputGroup.Text id="inputGroupPrepend"><FontAwesomeIcon icon={faPhone}/></InputGroup.Text> */}
+            <InputGroup.Text id="inputGroupPrepend">DT</InputGroup.Text>
             <Form.Control onChange={(e) => setPhone_number(e.target.value)}
               type="number"
               placeholder="phone number"
@@ -172,11 +173,14 @@ const handleSelect_availability = (event) => {
           </InputGroup>
         </Form.Group>
 
-
+  {/* /////////////////////////////////////////////////////////// */}
 
 
       </Row>
       <Row className="mb-3">
+
+          {/* /////////////////////////////////////////////////////////// */}
+
         <Form.Group as={Col} md="6" controlId="validationCustom03">
           <Form.Label>City</Form.Label>
           <Form.Control onChange={(e) => setCity(e.target.value)} type="text" placeholder="City" required />
@@ -184,6 +188,7 @@ const handleSelect_availability = (event) => {
             Please provide a valid city.
           </Form.Control.Feedback>
         </Form.Group>
+          {/* /////////////////////////////////////////////////////////// */}
         <Form.Group as={Col} md="3" controlId="validationCustom04">
           <Form.Label>State</Form.Label>
           <Form.Control onChange={(e) => setState(e.target.value)} type="text" placeholder="State" required />
@@ -191,7 +196,7 @@ const handleSelect_availability = (event) => {
             Please provide a valid state.
           </Form.Control.Feedback>
         </Form.Group>
-
+  {/* /////////////////////////////////////////////////////////// */}
 
 
 
@@ -217,10 +222,13 @@ const handleSelect_availability = (event) => {
            ) ) }
 
            </Form.Group>
+             {/* /////////////////////////////////////////////////////////// */}
+
+
            </Row>
           
           
-
+  {/* /////////////////////////////////////////////////////////// */}
               <Form.Group>
 
           <Form.Label>Field of study or work</Form.Label>
@@ -228,7 +236,7 @@ const handleSelect_availability = (event) => {
         
           </Form.Group>
 
-
+  {/* /////////////////////////////////////////////////////////// */}
 
 
 
@@ -263,7 +271,7 @@ const handleSelect_availability = (event) => {
 
           </div>
 </Form.Group>
-
+  {/* /////////////////////////////////////////////////////////// */}
 
 
 
@@ -300,7 +308,7 @@ const handleSelect_availability = (event) => {
 
 
 
-
+  {/* /////////////////////////////////////////////////////////// */}
 
 
           <Form.Group>
@@ -318,12 +326,9 @@ const handleSelect_availability = (event) => {
             </Form.Control.Feedback>
           </InputGroup>
 </Form.Group>
+  {/* /////////////////////////////////////////////////////////// */}
 
           
-       
-
-
-
 
       <Form.Group className="mb-3">
         <p>I garantee that:</p>
@@ -338,7 +343,7 @@ const handleSelect_availability = (event) => {
       </Form.Group>
       <Button type="submit">Submit form</Button>
 
-
+  {/* /////////////////////////////////////////////////////////// */}
 
     </Form>
     </div>
