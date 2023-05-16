@@ -6,15 +6,13 @@ import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Row from 'react-bootstrap/Row';
 import api from '../helpers/api';
-import { useHistory } from 'react-router-dom';
 import React from 'react';
 import './AlertMessage';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
 import Header from './Header';
 
 function Teachers() {
-  const history = useHistory();
+
   const [validated, setValidated] = useState(false);
   const navigate = useNavigate();
   const [full_name , setFull_name ] = useState ('')
@@ -127,7 +125,7 @@ const handleSelect_availability = (event) => {
         state:state
       })
       .then (res => {
-        history.push('/AlertMessage');
+        navigate('/AlertMessage');
         console.log(form)
       })
     }}
