@@ -35,22 +35,20 @@ function Students() {
 
 
 
-  const handleSelect = (event) => {
-    const courseId = event.target.id;
-    const isChecked = event.target.checked;
-    console.log(event.target.checked);
-    if (isChecked) {
-      setSelectedCourses((prevSelectedCourses) => [
-        ...prevSelectedCourses,
-        courseId,
-      ]);
-    } else {
-      setSelectedCourses((prevSelectedCourses) =>
-        prevSelectedCourses.filter((course) => course !== courseId)
-      );
-    }
-    setCourses_to_study(selectedCourses);
-  };
+const handleSelect = (event) => {
+  const selectedCourse = event.target.value;
+  const isChecked = event.target.checked;
+
+  if (isChecked) {
+    setSelectedCourses((prevSelectedCourses) => [...prevSelectedCourses, selectedCourse]);
+  } else {
+    setSelectedCourses((prevSelectedCourses) =>
+      prevSelectedCourses.filter((course) => course !== selectedCourse)
+    );
+  }
+  console.log(selectedCourse);
+};
+
 
   ////////////////////////////////////////////////////////////
 
@@ -220,7 +218,7 @@ function Students() {
           <Form.Label>Field of study or work</Form.Label>
           <Form.Control type="text" onChange={(e) => setField_of_study_or_work(e.target.value)} placeholder="ex: computer science" required />
         
-        <Form.Group title="Select courses you want to study" onSelect={handleSelect} >
+        <Form.Group title="Select courses you want to study" >
           <p>Select the courses you want to study</p>
       
         <div key={`checkbox`} className="mb-3">
@@ -229,28 +227,28 @@ function Students() {
             id={`Python`}
             label={`Python`}
             value={`Python`}
-            onSelect={handleSelect}
+            onChange={handleSelect}
           />
           <Form.Check
             type="checkbox"
             id={`C/C++`}
             label={`C/C++`}
             value={`C/C++`}
-            onSelect={handleSelect}
+            onChange={handleSelect}
           />
           <Form.Check
             type="checkbox"
             id={`Java`}
             label={`Java`}
             value={`Java`}
-            onSelect={handleSelect}
+            onChange={handleSelect}
           />
           <Form.Check
             type="checkbox"
             id={`Algorithm`}
             label={`Algorithm`}
             value={`Algorithm`}
-            onSelect={handleSelect}
+            onChange={handleSelect}
           />
 
         </div> 
