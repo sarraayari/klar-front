@@ -252,34 +252,34 @@ const handleSelect = (event) => {
     
         </Form.Group>
   <p>Select your availability</p>
-  <div key={`checkbox`} className="mb-3" onSelect={handleSelect_availability} >
+  <div key={`checkbox`} className="mb-3" >
           <Form.Check
             type="checkbox"
             id={`on the weekends`}
             label={`on the weekends`}
             value={`on the weekends`}
-            onSelect={handleSelect_availability}
+            onChange={handleSelect_availability}
           />
           <Form.Check
             type="checkbox"
             id={`all sundays`}
             label={`all sundays`}
             value={`all sundays`}
-            onSelect={handleSelect_availability}
+            onChange={handleSelect_availability}
           />
           <Form.Check
             type="checkbox"
             id={`Saturday`}
             label={`Saturday`}
             value={`Saturday`}
-            onSelect={handleSelect_availability}
+            onChange={handleSelect_availability}
           />
           <Form.Check
             type="checkbox"
             id={`Wednesday afternoon`}
             label={`Wednesday afternoon`}
             value={`Wednesday afternoon`}
-            onSelect={handleSelect_availability}
+            onChange={handleSelect_availability}
           />
           </div>
           <Form.Label>Hourly budget</Form.Label>
