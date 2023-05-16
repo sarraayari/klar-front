@@ -38,7 +38,7 @@ function Students() {
   const handleSelect = (event) => {
     const courseId = event.target.id;
     const isChecked = event.target.checked;
-
+    console.log(event.target.checked);
     if (isChecked) {
       setSelectedCourses((prevSelectedCourses) => [
         ...prevSelectedCourses,
@@ -57,6 +57,7 @@ function Students() {
   const handleSelect_availability = (event) => {
     const avId = event.target.id;
     const isChecked = event.target.checked;
+    console.log(event.target.checked)
   
     if (isChecked) {
       setSelect_availability((prevSelect_availability) => [
@@ -78,7 +79,7 @@ function Students() {
 
   const handleSelect_Status = (event) => {
     const selectedStatus = event.target.id;
-
+    console.log(event.target.checked)
     console.log(`Selected status: ${selectedStatus}`);
     setStudent_or_employed(selectedStatus);
     
@@ -96,9 +97,7 @@ function Students() {
 
   const handle_Submit = (event) => {
     const form = event.currentTarget;
-    if (form.checkValidity() === false) {
       event.preventDefault();
-      event.stopPropagation();
       console.log(full_name);
       api.post('/Forms-post',{
         full_name:full_name,
@@ -116,7 +115,7 @@ function Students() {
         navigate('/AlertMessage');
         console.log(full_name)
       })
-    }};
+    };
 
   //   setValidated(true);
   // };
@@ -200,7 +199,7 @@ function Students() {
 
     <Form.Group >
           <p>Currently a student or an employer</p>
-          {['radio'].map((type) => (
+         
         <div key={`radio`} className="mb-3">
           <Form.Check
             type="radio"
@@ -215,7 +214,7 @@ function Students() {
             onSelect={handleSelect_Status}
           />
           </div>
-           ) ) }
+        
            </Form.Group>
           
           
@@ -227,7 +226,7 @@ function Students() {
         
         <Form.Group title="Select courses you want to study" >
           <p>Select the courses you want to study</p>
-      {['checkbox'].map((type) => (
+      
         <div key={`checkbox`} className="mb-3">
           <Form.Check
             type="checkbox"
@@ -255,7 +254,7 @@ function Students() {
           />
 
         </div> 
-      ))}
+    
         </Form.Group>
   <p>Select your availability</p>
   <div key={`checkbox`} className="mb-3" >
