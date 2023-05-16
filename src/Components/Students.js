@@ -77,22 +77,22 @@ function Students() {
 
 
 
-  const handleSelect_Status = (event) => {
-    const selectedStatus = event.target.id;
-    console.log(event.target.checked)
-    console.log(`Selected status: ${selectedStatus}`);
-    setStudent_or_employed(selectedStatus);
+  // const handleSelect_Status = (event) => {
+  //   const selectedStatus = event.target.id;
+  //   console.log(event.target.checked)
+  //   console.log(`Selected status: ${selectedStatus}`);
+  //   setStudent_or_employed(selectedStatus);
     
-    if (selectedStatus === 'Student') {
+  //   if (selectedStatus === 'Student') {
      
-      console.log('You selected Student');
+  //     console.log('You selected Student');
      
-    } else if (selectedStatus === 'Employed') {
+  //   } else if (selectedStatus === 'Employed') {
      
-      console.log('You selected Employed');
+  //     console.log('You selected Employed');
      
-    }
-  }
+  //   }
+  // }
   //////////////////////////////////////////////////////
 
   const handle_Submit = (event) => {
@@ -106,7 +106,7 @@ function Students() {
         student_or_employed:student_or_employed,
         hourly_budget:hourly_budget,
         availability:availability,
-        courses_to_study:courses_to_study,
+        courses_to_study:selectedCourses,
         field_of_study_or_work:field_of_study_or_work,
         phone_number:phone_number,
         state:state
@@ -197,7 +197,7 @@ function Students() {
           </Form.Control.Feedback>
         </Form.Group>
 
-    <Form.Group onSelect={handleSelect_Status}>
+    <Form.Group >
           <p>Currently a student or an employer</p>
          
         <div key={`radio`} className="mb-3">
@@ -205,13 +205,13 @@ function Students() {
             type="radio"
             id={`Student`}
             label={`Student`}
-            onSelect={handleSelect_Status}
+            onSelect={(e) => setStudent_or_employed(e.target.value)}
           />
           <Form.Check
             type="radio"
             id={`Empolyed`}
             label={`Empolyed`}
-            onSelect={handleSelect_Status}
+            onSelect={(e) => setStudent_or_employed(e.target.value)}
           />
           </div>
         
@@ -285,11 +285,12 @@ function Students() {
           </div>
           <Form.Label>Hourly budget</Form.Label>
           <InputGroup hasValidation>
-            <InputGroup.Text onChange={(e) => setHourly_budget(e.target.value)} id="inputGroupPrepend">DT</InputGroup.Text>
+            <InputGroup.Text  id="inputGroupPrepend">DT</InputGroup.Text>
             <Form.Control
               type="number"
               placeholder="hourly budget"
               aria-describedby="inputGroupPrepend"
+              onChange={(e) => setHourly_budget(e.target.value)}
               required
             />
              
