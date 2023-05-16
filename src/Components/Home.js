@@ -15,6 +15,9 @@ function Home  ()  {
 
   const handleSubmit = (event) => {
     const form = event.currentTarget;
+    console.log(full_name);
+    console.log(email);
+    console.log(message);
       api.post('/Forms-post-contact',{
         full_name:full_name,
         message:message,
