@@ -30,27 +30,24 @@ function Teachers() {
   const [selectedCourses, setSelectedCourses] = useState([]);
   const [select_availability, setSelect_availability ] = useState([]);
 
+  
+  const [selectedCourses2, setSelectedCourses2] = useState([]);
 
 
   const [selectedFields, setSelectedFields] = useState([]);
   //////////////////////////////////////////////////////
   const handleSelect = (event) => {
-    const courseId = event.target.id;
+    const selectedCourse = event.target.value;
     const isChecked = event.target.checked;
-
+  
     if (isChecked) {
-      
-      setSelectedCourses((prevSelectedCourses) => [
-        ...prevSelectedCourses,
-        courseId,
-      ]);
+      setSelectedCourses((prevSelectedCourses) => [...prevSelectedCourses, selectedCourse]);
     } else {
       setSelectedCourses((prevSelectedCourses) =>
-        prevSelectedCourses.filter((course) => course !== courseId)
+        prevSelectedCourses.filter((course) => course !== selectedCourse)
       );
     }
-    console.log(courses_to_teach)
-    setCourses_to_teach(selectedCourses);
+    console.log(selectedCourse);
   };
 
 
@@ -72,28 +69,17 @@ function Teachers() {
 
 
 const handleSelect_availability = (event) => {
-  const avId = event.target.id;
+  const selectedCourse2 = event.target.value;
   const isChecked = event.target.checked;
 
   if (isChecked) {
-    setSelect_availability((prevSelect_availability) => [
-      ...prevSelect_availability,
-      avId,
-    ]);
+    setSelectedCourses2((prevSelectedCourses2) => [...prevSelectedCourses2, selectedCourse2]);
   } else {
-    setSelect_availability((prevSelect_availability) =>
-      prevSelect_availability.filter((availability) => availability !== avId)
+    setSelectedCourses2((prevSelectedCourses2) =>
+      prevSelectedCourses2.filter((course) => course !== selectedCourse2)
     );
   }
-  console.log(select_availability)
-  setAvailability(select_availability);
-  console.log(full_name)
-  console.log(email)
-  console.log(phone_number)
-  console.log(state)
-  console.log(city)
-  console.log(hourly_budget)
-  
+  console.log(selectedCourse2);
 };
    
 
@@ -103,23 +89,23 @@ const handleSelect_availability = (event) => {
 
 
 
-    const handleSelect_Status = (event) => {
-      const selectedStatus = event.target.id;
+    // const handleSelect_Status = (event) => {
+    //   const selectedStatus = event.target.id;
 
-      console.log(`Selected status: ${selectedStatus}`);
-      setStudent_or_employed(selectedStatus);
+    //   console.log(`Selected status: ${selectedStatus}`);
+    //   setStudent_or_employed(selectedStatus);
       
-      if (selectedStatus === 'Student') {
+    //   if (selectedStatus === 'Student') {
        
-        console.log('You selected Student');
+    //     console.log('You selected Student');
        
-      } else if (selectedStatus === 'Employed') {
+    //   } else if (selectedStatus === 'Employed') {
        
-        console.log('You selected Employed');
+    //     console.log('You selected Employed');
        
-      }
-      console.log(student_or_employed)
-    }
+    //   }
+    //   console.log(student_or_employed)
+    // }
     
 
 
@@ -134,8 +120,8 @@ const handleSelect_availability = (event) => {
         email: email,
         student_or_employed:student_or_employed,
         hourly_budget:hourly_budget,
-        availability:availability,
-        courses_to_teach:courses_to_teach,
+        availability:selectedCourses2,
+        courses_to_teach:selectedCourses,
         field_of_study_or_work:field_of_study_or_work,
         phone_number:phone_number,
         state:state
@@ -220,7 +206,7 @@ const handleSelect_availability = (event) => {
 
 
 
-    <Form.Group onSelect={handleSelect_Status}>
+    <Form.Group >
           <p>Currently a student or an employer</p>
          
         <div key={`radio`} className="mb-3">
@@ -229,14 +215,16 @@ const handleSelect_availability = (event) => {
             aria-label="radio 1"
             id={`Student`}
             label={`Student`}
-            onChange={handleSelect_Status}
+            value={`Student`}
+            onChange={(e) => setStudent_or_employed(e.target.value)}
           />
           <Form.Check
             type="radio"
             aria-label="radio 1"
             id={`Empolyed`}
             label={`Empolyed`}
-            onChange={handleSelect_Status}
+            value={`Empolyed`}
+            onChange={(e) => setStudent_or_employed(e.target.value)}
           />
           </div>
           
@@ -260,7 +248,7 @@ const handleSelect_availability = (event) => {
 
 
 
-        <Form.Group title="Select courses you want to teach" onSelect={handleSelect}>
+        <Form.Group title="Select courses you want to teach" >
           <p>Select the courses you want to teach</p>
     
         
@@ -268,24 +256,28 @@ const handleSelect_availability = (event) => {
             type="checkbox"
             id={`Python`}
             label={`Python`}
+            value={`Python`}
             onChange={handleSelect}
           />
           <Form.Check
             type="checkbox"
             id={`C/C++`}
             label={`C/C++`}
+            value={`C/C++`}
             onChange={handleSelect}
           />
           <Form.Check
             type="checkbox"
             id={`Java`}
             label={`Java`}
+            value={`Java`}
             onChange={handleSelect}
           />
           <Form.Check
             type="checkbox"
             id={`Algorithm`}
             label={`Algorithm`}
+            value={`Algorithm`}
             onChange={handleSelect}
           />
 
@@ -298,29 +290,33 @@ const handleSelect_availability = (event) => {
 
 <Form.Group>
   <p>Select your availability</p>
-  <div key={`checkbox`} className="mb-3" onSelect={handleSelect_availability}>
+  <div key={`checkbox`} className="mb-3" >
           <Form.Check 
             type="checkbox"
             id={`on the weekends`}
             label={`on the weekends`}
+            value={`on the weekends`}
             onChange={handleSelect_availability}
           />
           <Form.Check
             type="checkbox"
             id={`all sundays`}
             label={`all sundays`}
+            value={`all sundays`}
             onChange={handleSelect_availability}
           />
           <Form.Check
             type="checkbox"
             id={`Saturday`}
             label={`Saturday`}
+            value={`Saturday`}
             onChange={handleSelect_availability}
           />
           <Form.Check
             type="checkbox"
             id={`Wednesday afternoon`}
             label={`Wednesday afternoon`}
+            value={`Wednesday afternoon`}
             onChange={handleSelect_availability}
           />
           </div>
@@ -334,11 +330,12 @@ const handleSelect_availability = (event) => {
           <Form.Group>
           <Form.Label>Hourly budget</Form.Label>
           <InputGroup hasValidation>
-            <InputGroup.Text onChange={(e) => setHourly_budget(e.target.value)} id="inputGroupPrepend">DT</InputGroup.Text>
+            <InputGroup.Text  id="inputGroupPrepend">DT</InputGroup.Text>
             <Form.Control
               type="number"
               placeholder="hourly budget"
               aria-describedby="inputGroupPrepend"
+              onChange={(e) => setHourly_budget(e.target.value)}
               required
             />
           </InputGroup>

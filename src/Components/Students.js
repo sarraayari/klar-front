@@ -137,7 +137,7 @@ const handleSelect = (event) => {
             type="text"
             placeholder="full name"
           />
-          <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+          
         </Form.Group>
 
 
@@ -149,7 +149,7 @@ const handleSelect = (event) => {
             type="email"
             placeholder="email" 
           />
-          <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+         
         </Form.Group>
 
 
