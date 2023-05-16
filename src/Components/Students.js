@@ -60,7 +60,7 @@ const handleSelect = (event) => {
     if (isChecked) {
       setSelectedCourses2((prevSelectedCourses2) => [...prevSelectedCourses2, selectedCourse2]);
     } else {
-      setSelectedCourses((prevSelectedCourses) =>
+      setSelectedCourses2((prevSelectedCourses2) =>
         prevSelectedCourses2.filter((course) => course !== selectedCourse2)
       );
     }
