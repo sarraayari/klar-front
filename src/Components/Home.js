@@ -21,7 +21,7 @@ function Home  ()  {
       })
       .then (res => {
         navigate('/AlertMessage')
-        console.log(form)
+       
       })
     }
 
