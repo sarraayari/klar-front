@@ -8,8 +8,6 @@ import Row from 'react-bootstrap/Row';
 import api from '../helpers/api';
 import React from 'react';
 import './AlertMessage';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { faPhone } from '@fortawesome/free-solid-svg-icons';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Header from './Header';

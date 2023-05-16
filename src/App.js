@@ -6,7 +6,6 @@ import './App.css';
 import Footer from './Components/Footer';
 import Teacher from './Components/Teachers';
 import Student from './Components/Students';
-import Header from './Components/Header';
 import { BrowserRouter, Route , Routes} from "react-router-dom";
 import Home from './Components/Home';
 import AlertMessage from '../src/Components/AlertMessage';

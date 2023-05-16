@@ -9,8 +9,6 @@ import api from '../helpers/api';
 import React from 'react';
 import './AlertMessage';
 import Header from './Header';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import { faPhone } from '@fortawesome/free-solid-svg-icons';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
@@ -225,7 +223,7 @@ function Students() {
 
 
           <Form.Label>Field of study or work</Form.Label>
-          <Form.Control type="text" placeholder="ex: computer science" required />
+          <Form.Control type="text" onChange={(e) => setField_of_study_or_work(e.target.value)} placeholder="ex: computer science" required />
         
         <Form.Group title="Select courses you want to study" onSelect={handleSelect}>
           <p>Select the courses you want to study</p>

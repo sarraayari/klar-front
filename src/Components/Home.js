@@ -2,7 +2,6 @@ import React from 'react';
 import { useState } from 'react';
 import api from '../helpers/api';
 import { Container, Row, Col, Form, Button } from 'react-bootstrap';
-import Alert from './AlertMessage';
 import './AlertMessage'
 import { useNavigate } from 'react-router-dom';
 import Header from './Header';
