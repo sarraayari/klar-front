@@ -30,24 +30,42 @@ function Teachers() {
   const [selectedCourses, setSelectedCourses] = useState([]);
   const [select_availability, setSelect_availability ] = useState([]);
 
-  //////////////////////////////////////////////////////
-  const handleSelect = (event) => {
-    const courseId = event.target.id;
-    const isChecked = event.target.checked;
 
-    if (isChecked) {
+
+  const [selectedFields, setSelectedFields] = useState([]);
+  //////////////////////////////////////////////////////
+  // const handleSelect = (event) => {
+  //   const courseId = event.target.id;
+  //   const isChecked = event.target.checked;
+
+  //   if (isChecked) {
       
-      setSelectedCourses((prevSelectedCourses) => [
-        ...prevSelectedCourses,
-        courseId,
-      ]);
+  //     setSelectedCourses((prevSelectedCourses) => [
+  //       ...prevSelectedCourses,
+  //       courseId,
+  //     ]);
+  //   } else {
+  //     setSelectedCourses((prevSelectedCourses) =>
+  //       prevSelectedCourses.filter((course) => course !== courseId)
+  //     );
+  //   }
+  //   console.log(courses_to_teach)
+  //   setCourses_to_teach(selectedCourses);
+  // };
+
+
+
+  ///////////////////////////////////////////////////
+  const handleSelect = (event) => {
+    const { value, checked } = event.target;
+
+    if (checked) {
+      setSelectedFields((prevSelectedFields) => [...prevSelectedFields, value]);
     } else {
-      setSelectedCourses((prevSelectedCourses) =>
-        prevSelectedCourses.filter((course) => course !== courseId)
+      setSelectedFields((prevSelectedFields) =>
+        prevSelectedFields.filter((field) => field !== value)
       );
     }
-    console.log(courses_to_teach)
-    setCourses_to_teach(selectedCourses);
   };
 
 //////////////////////////////////////////////////////
@@ -126,7 +144,7 @@ const handleSelect_availability = (event) => {
       })
       .then (res => {
         navigate('/AlertMessage');
-        console.log(form)
+        console.log(selectedFields);
       })
     }}
 
@@ -247,7 +265,7 @@ const handleSelect_availability = (event) => {
         <Form.Group title="Select courses you want to teach" onSelect={handleSelect}>
           <p>Select the courses you want to teach</p>
     
-        <div key={`checkbox`} className="mb-3">
+        
           <Form.Check
             type="checkbox"
             id={`Python`}
@@ -273,7 +291,7 @@ const handleSelect_availability = (event) => {
             onChange={handleSelect}
           />
 
-          </div>
+          
 </Form.Group>
   {/* /////////////////////////////////////////////////////////// */}
 
@@ -348,7 +366,7 @@ const handleSelect_availability = (event) => {
       {/* /////////////////////////////////////////////////////////// */}
 
 
-      
+
       <Button type="submit">Submit form</Button>
 
   {/* /////////////////////////////////////////////////////////// */}
