@@ -199,12 +199,14 @@ function Students() {
             type="radio"
             id={`Student`}
             label={`Student`}
+            value={`Student`}
             onChange={(e) => setStudent_or_employed(e.target.value)}
           />
           <Form.Check
             type="radio"
             id={`Empolyed`}
             label={`Empolyed`}
+            value={`Empolyed`}
             onChange={(e) => setStudent_or_employed(e.target.value)}
           />
           </div>
@@ -226,24 +228,28 @@ function Students() {
             type="checkbox"
             id={`Python`}
             label={`Python`}
+            value={`Python`}
             onSelect={handleSelect}
           />
           <Form.Check
             type="checkbox"
             id={`C/C++`}
             label={`C/C++`}
+            value={`C/C++`}
             onSelect={handleSelect}
           />
           <Form.Check
             type="checkbox"
             id={`Java`}
             label={`Java`}
+            value={`Java`}
             onSelect={handleSelect}
           />
           <Form.Check
             type="checkbox"
             id={`Algorithm`}
             label={`Algorithm`}
+            value={`Algorithm`}
             onSelect={handleSelect}
           />
 
@@ -256,24 +262,28 @@ function Students() {
             type="checkbox"
             id={`on the weekends`}
             label={`on the weekends`}
+            value={`on the weekends`}
             onSelect={handleSelect_availability}
           />
           <Form.Check
             type="checkbox"
             id={`all sundays`}
             label={`all sundays`}
+            value={`all sundays`}
             onSelect={handleSelect_availability}
           />
           <Form.Check
             type="checkbox"
             id={`Saturday`}
             label={`Saturday`}
+            value={`Saturday`}
             onSelect={handleSelect_availability}
           />
           <Form.Check
             type="checkbox"
             id={`Wednesday afternoon`}
             label={`Wednesday afternoon`}
+            value={`Wednesday afternoon`}
             onSelect={handleSelect_availability}
           />
           </div>
