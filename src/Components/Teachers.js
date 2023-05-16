@@ -21,20 +21,14 @@ function Teachers() {
   const [state , setState ] = useState ('')
   const [phone_number , setPhone_number ] = useState ('')
   const [field_of_study_or_work , setField_of_study_or_work ] = useState ('')
-  const [courses_to_teach , setCourses_to_teach ] = useState ([])
-  const [availability , setAvailability ] = useState ([])
+ 
   const [hourly_budget , setHourly_budget ] = useState ('')
   const [student_or_employed , setStudent_or_employed ] = useState ('')
 
 
   const [selectedCourses, setSelectedCourses] = useState([]);
-  const [select_availability, setSelect_availability ] = useState([]);
-
-  
   const [selectedCourses2, setSelectedCourses2] = useState([]);
 
-
-  const [selectedFields, setSelectedFields] = useState([]);
   //////////////////////////////////////////////////////
   const handleSelect = (event) => {
     const selectedCourse = event.target.value;
@@ -52,19 +46,7 @@ function Teachers() {
 
 
 
-  ///////////////////////////////////////////////////
-  // const handleSelect = (event) => {
-  //   const { value, checked } = event.target;
-
-  //   if (checked) {
-  //     setSelectedFields((prevSelectedFields) => [...prevSelectedFields, value]);
-  //   } else {
-  //     setSelectedFields((prevSelectedFields) =>
-  //       prevSelectedFields.filter((field) => field !== value)
-  //     );
-  //   }
-  // };
-
+  
 //////////////////////////////////////////////////////
 
 
@@ -84,36 +66,11 @@ const handleSelect_availability = (event) => {
    
 
 
-
-//////////////////////////////////////////////////////
-
-
-
-    // const handleSelect_Status = (event) => {
-    //   const selectedStatus = event.target.id;
-
-    //   console.log(`Selected status: ${selectedStatus}`);
-    //   setStudent_or_employed(selectedStatus);
-      
-    //   if (selectedStatus === 'Student') {
-       
-    //     console.log('You selected Student');
-       
-    //   } else if (selectedStatus === 'Employed') {
-       
-    //     console.log('You selected Employed');
-       
-    //   }
-    //   console.log(student_or_employed)
-    // }
-    
-
-
 //////////////////////////////////////////////////////
 
   const handleSubmit = (event) => {
     const form = event.currentTarget;
-    
+    event.preventDefault();
       api.post('/Forms-post-teacher',{
         full_name:full_name,
         city:city,

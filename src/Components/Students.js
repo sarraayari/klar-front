@@ -22,11 +22,9 @@ function Students() {
   const [state , setState ] = useState ('')
   const [phone_number , setPhone_number ] = useState ('')
   const [field_of_study_or_work , setField_of_study_or_work ] = useState ('')
-  const [courses_to_study , setCourses_to_study ] = useState ([])
-  const [availability , setAvailability ] = useState ([])
+
   const [hourly_budget , setHourly_budget ] = useState ('')
   const [student_or_employed , setStudent_or_employed ] = useState ('')
-
 
   const [selectedCourses, setSelectedCourses] = useState([]);
   const [selectedCourses2, setSelectedCourses2] = useState([]);
@@ -67,27 +65,6 @@ const handleSelect = (event) => {
     console.log(selectedCourse2);
   };
 
-  ///////////////////////////////////////////////////////////////
-
-
-
-
-  // const handleSelect_Status = (event) => {
-  //   const selectedStatus = event.target.id;
-  //   console.log(event.target.checked)
-  //   console.log(`Selected status: ${selectedStatus}`);
-  //   setStudent_or_employed(selectedStatus);
-    
-  //   if (selectedStatus === 'Student') {
-     
-  //     console.log('You selected Student');
-     
-  //   } else if (selectedStatus === 'Employed') {
-     
-  //     console.log('You selected Employed');
-     
-  //   }
-  // }
   //////////////////////////////////////////////////////
 
   const handle_Submit = (event) => {
@@ -108,18 +85,9 @@ const handleSelect = (event) => {
       })
       .then (res => {
         navigate('/AlertMessage');
-        console.log(full_name)
+        
       })
     };
-
-  //   setValidated(true);
-  // };
-
-
-
-
-
-
 
 
 
@@ -158,7 +126,7 @@ const handleSelect = (event) => {
         <Form.Group as={Col} md="4" controlId="validationCustomUsername">
           <Form.Label>Phone number</Form.Label>
           <InputGroup hasValidation>
-            {/* <InputGroup.Text id="inputGroupPrepend"><FontAwesomeIcon icon={faPhone}/></InputGroup.Text> */}
+            <InputGroup.Text id="inputGroupPrepend">+216</InputGroup.Text>
             <Form.Control onChange={(e) => setPhone_number(e.target.value)}
               type="number"
               placeholder="phone number"
